@@ -48,7 +48,7 @@ public class Song implements Instructions {
     @Override
     public String instructions() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Let's sing 'Silent Night':\n");
+        sb.append("Let's Play 'Silent Night':\n");
         for (int i = 0; i < noteNames.length; i++) {
             sb.append(noteNames[i]).append(" - ").append(notePitches[i]).append("Hz\n");
         }
