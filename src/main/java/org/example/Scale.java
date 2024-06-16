@@ -1,12 +1,6 @@
 package org.example;
 
-import be.tarsos.dsp.AudioEvent;
-import be.tarsos.dsp.pitch.PitchDetectionHandler;
-import be.tarsos.dsp.pitch.PitchDetectionResult;
-
-import javax.swing.*;
-
-public class Scale extends PitchDetection implements Instructions {
+public class Scale implements Instructions {
 
     private final String[] noteNames = {
             "Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do"
@@ -22,10 +16,7 @@ public class Scale extends PitchDetection implements Instructions {
             493.88f, // B4 (Ti)
             523.25f  // C5 (Do)
     };
-
-    public Scale(JLabel statusLabel) {
-        super(statusLabel);
-    }
+    
 
     @Override
     public String instructions() {
@@ -51,14 +42,5 @@ public class Scale extends PitchDetection implements Instructions {
     public float[] getNotePitches() {
         return notePitches;
     }
-
-    @Override
-    protected PitchDetectionHandler createPitchDetectionHandler() {
-        return new PitchDetectionHandler() {
-            @Override
-            public void handlePitch(PitchDetectionResult pitchDetectionResult, AudioEvent audioEvent) {
-                pitchDetection(pitchDetectionResult);
-            }
-        };
-    }
+    
 }
